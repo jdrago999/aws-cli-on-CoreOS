@@ -46,5 +46,25 @@ aws_secret_access_key = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ### Run your commands within the container
 
 ```bash
+docker run -it -v $HOME/.aws:/home/aws/.aws aws/cli <command> <args>
+```
+
+#### Examples
+
+**List Buckets**
+
+```bash
+docker run -it -v $HOME/.aws:/home/aws/.aws aws/cli aws s3 ls
+```
+
+**Get ECR Login**
+
+```bash
 docker run -it -v $HOME/.aws:/home/aws/.aws aws/cli aws ecr get-login
+```
+
+**Use a named profile**
+
+```bash
+run -it -v $HOME/.aws:/home/aws/.aws aws/cli aws ecr get-login --profile groove
 ```
