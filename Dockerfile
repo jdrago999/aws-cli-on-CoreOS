@@ -1,16 +1,16 @@
 
-FROM ubuntu:15.10
+FROM alpine:latest
 
-RUN apt-get update
-RUN apt-get install -y \
+RUN apk add --update \
     python \
-    python-pip
+    py-pip
 
-RUN adduser --disabled-login --gecos '' aws
+RUN adduser -D aws
 WORKDIR /home/aws
 
 RUN \
     mkdir aws && \
+    pip install --upgrade pip && \
     pip install awscli
 
 USER aws
