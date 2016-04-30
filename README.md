@@ -68,3 +68,7 @@ docker run -it -v $HOME/.aws:/home/aws/.aws aws/cli aws ecr get-login
 ```bash
 run -it -v $HOME/.aws:/home/aws/.aws aws/cli aws ecr get-login --profile groove
 ```
+
+## See Also
+
+  * https://www.linkedin.com/pulse/use-aws-cli-from-coreos-via-docker-easy-way-john-drago
