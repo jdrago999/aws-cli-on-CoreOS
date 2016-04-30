@@ -9,7 +9,7 @@ RUN apk add --update \
 WORKDIR /home/aws
 
 RUN mkdir aws && \
-    pip install --upgrade pip && \
+#    pip install --upgrade pip && \
     pip install awscli
 
 USER aws
