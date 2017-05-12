@@ -3,6 +3,7 @@ FROM alpine:latest
 
 RUN apk add --update \
     python \
+    groff \
     py2-pip && \
     adduser -D aws
 
