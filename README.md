@@ -18,10 +18,10 @@ Run a container within CoreOS that has the aws cli tools installed, and simply m
 
 ## Instructions
 
-### Build the container
+### Run
 
 ```bash
-docker build -t aws/cli .
+docker build -t jdrago999/aws-cli .
 ```
 
 ### Configuration files
@@ -46,7 +46,7 @@ aws_secret_access_key = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ### Run your commands within the container
 
 ```bash
-docker run -it -v $HOME/.aws:/home/aws/.aws aws/cli <command> <args>
+docker run -it -v $HOME/.aws:/home/aws/.aws jdrago999/aws-cli <command> <args>
 ```
 
 #### Examples
@@ -54,19 +54,19 @@ docker run -it -v $HOME/.aws:/home/aws/.aws aws/cli <command> <args>
 **List Buckets**
 
 ```bash
-docker run -it -v $HOME/.aws:/home/aws/.aws aws/cli aws s3 ls
+docker run -it -v $HOME/.aws:/home/aws/.aws jdrago999/aws-cli aws s3 ls
 ```
 
 **Get ECR Login**
 
 ```bash
-docker run -it -v $HOME/.aws:/home/aws/.aws aws/cli aws ecr get-login
+docker run -it -v $HOME/.aws:/home/aws/.aws jdrago999/aws-cli aws ecr get-login
 ```
 
 **Use a named profile**
 
 ```bash
-run -it -v $HOME/.aws:/home/aws/.aws aws/cli aws ecr get-login --profile groove
+run -it -v $HOME/.aws:/home/aws/.aws jdrago999/aws-cli aws ecr get-login --profile groove
 ```
 
 ## See Also
